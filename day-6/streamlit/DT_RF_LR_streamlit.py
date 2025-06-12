@@ -53,10 +53,7 @@ best_model_name = max(results, key=lambda x: results[x]['accuracy'])
 best_model = results[best_model_name]['model']
 st.success(f"Best model: {best_model_name} (Accuracy: {results[best_model_name]['accuracy']:.2f})")
 
-# Save the best model, features, and label mapping
-joblib.dump(best_model, 'best_weather_model.pkl')
-joblib.dump(list(X.columns), 'model_features.pkl')
-joblib.dump(label_mapping, 'label_mapping.pkl')
+
 
 # Show classification report for best model
 y_pred_best = best_model.predict(X_test)
