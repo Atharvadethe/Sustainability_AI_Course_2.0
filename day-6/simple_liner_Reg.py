@@ -34,8 +34,10 @@ plt.ylabel('Energy')
 plt.legend()
 st.pyplot(plt)
 
-
-
 #calculate the R-squared score
 r_squared = model.score(X_test, y_test)
 st.write("R-squared score:", r_squared)
+
+#save the model
+import joblib
+joblib.dump(model, r'D:\PYTHON\Edunet2.0\day-6\simple_linear_model.pkl')
